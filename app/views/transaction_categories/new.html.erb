@@ -19,7 +19,7 @@
   </p>
 
   <p>
-    <%= form.label 'Account Type' %><br>
+    <%= form.label :account_type %><br>
     <%= form.collection_select(:account_type_id, AccountType.all, :id, :name) %>
   </p>
 
