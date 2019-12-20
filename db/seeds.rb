@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+AccountType.create([{name: "ASSETS", debit?: true}, {name: "LIABILITIES", debit?: false},
+    {name: "EQUITY", debit?: false}, {name: "REVENUES", debit?: false}, {name: "EXPENSES", debit?:true}])
