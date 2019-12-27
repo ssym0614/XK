@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_034141) do
 
   create_table "account_types", force: :cascade do |t|
     t.string "name"
-    t.boolean "debit?"
+    t.boolean "debit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_034141) do
     t.integer "transaction_category1_id"
     t.integer "transaction_category2_id"
     t.integer "cents"
+    t.boolean "inverted"
     t.text "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

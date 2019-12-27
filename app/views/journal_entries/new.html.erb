@@ -1,41 +1,41 @@
 <h1>New Journal Entry</h1>
 <%= form_with model: @journal_entry, local: true do |form| %>
-  <%= render 'errors', model: @journal_entry %>
+<%= render 'errors', model: @journal_entry %>
 
-  <p>
-    <%= form.label :transaction_category1 %><br>
-    <%= date_select :journal_entry, :accrued %>
-  </p>
+<p>
+  <%= form.label :transaction_category1 %><br>
+  <%= date_select :journal_entry, :accrued %>
+</p>
 
-  <p>
-    <%= form.label :item %><br>
-    <%= form.text_field :item %>
-  </p>
+<p>
+  <%= form.label :item %><br>
+  <%= form.text_field :item %>
+</p>
 
-  <p>
-    <%= form.label :transaction_category1 %><br>
-    <%= form.collection_select(:transaction_category1_id, TransactionCategory.all, :id, :name) %>
-  </p>
-  <p>
-    <%= form.label :cents1 %><br>
-    <%= form.number_field :cents1 %>
-  </p>
- 
-  <p>
-    <%= form.label :transaction_category2 %><br>
-    <%= form.collection_select(:transaction_category2_id, TransactionCategory.all, :id, :name) %>
-  </p>
-  <p>
-    <%= form.label :cents2 %><br>
-    <%= form.number_field :cents2 %>
-  </p>
- 
-   <p>
-    <%= form.label :note %><br>
-    <%= form.text_area :note %>
-  </p>
+<p>
+  <%= form.label :transaction_category1 %><br>
+  <%= form.collection_select(:transaction_category1_id, TransactionCategory.all, :id, :name) %>
+</p>
+<p>
+  <%= form.label :dollars1 %><br>
+  <%= form.number_field :dollars1, step: 0.01 %>
+</p>
 
-  <p>
-    <%= form.submit %>
-  </p>
+<p>
+  <%= form.label :transaction_category2 %><br>
+  <%= form.collection_select(:transaction_category2_id, TransactionCategory.all, :id, :name) %>
+</p>
+<p>
+  <%= form.label :dollars2 %><br>
+  <%= form.number_field :dollars2, step: 0.01 %>
+</p>
+
+<p>
+  <%= form.label :note %><br>
+  <%= form.text_area :note %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
 <% end %>

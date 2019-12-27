@@ -6,6 +6,7 @@ class CreateJournalEntries < ActiveRecord::Migration[6.0]
       t.references :transaction_category1, null: true, foreign_key: {to_table: :transaction_categories}
       t.references :transaction_category2, null: true, foreign_key: {to_table: :transaction_categories}
       t.integer :cents
+      t.boolean :inverted
       t.text :note
 
       t.timestamps
