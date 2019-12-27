@@ -1,0 +1,10 @@
+<tr>
+    <td><%= journal_entry.accrued %></td>
+    <td><%= journal_entry.item %></td>
+    <% @transaction_categories.each do |transaction_category| %>
+      <td><%= number_with_precision(journal_entry.calculate_amount(transaction_category), precision: 2) %></td>
+    <% end %>
+    <td><%= number_with_precision(journal_entry.total_debit, precision: 2) %></td>
+    <td><%= number_with_precision(journal_entry.total_credit, precision: 2) %></td>
+    <td><%= journal_entry.note %></td>
+</tr>

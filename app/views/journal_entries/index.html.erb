@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <table class="table table-striped table-dark table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Accrued</th>
+        <th scope="col">Item</th>
+        <% @transaction_categories.each do |transaction_category| %>
+        <th scope="col"><%= transaction_category.name %></th>
+        <% end %>
+        <th scope="col">Total Debit</th>
+        <th scope="col">Total Credit</th>
+        <th scope="col">Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @journal_entries %>
+    </tbody>
+  </table>
+</div>
